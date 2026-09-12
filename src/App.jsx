@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Hero, { Atmosphere } from './components/Hero'
 import PlayerCard from './components/PlayerCard'
 import ListeningCounter from './components/ListeningCounter'
-import StartOverlay from './components/StartOverlay'
 import Footer from './components/Footer'
 import { useYouTubePlayer } from './hooks/useYouTubePlayer'
 import { useListeningCounter } from './hooks/useListeningCounter'
@@ -12,8 +11,6 @@ import './App.css'
 const { hero, player: playerConfig, counter: counterConfig, footer } = siteConfig
 
 function App() {
-  const [hasStarted, setHasStarted] = useState(false)
-
   const player = useYouTubePlayer({
     containerId: 'yt-player',
     playlistId: playerConfig.youtube.playlistId,
@@ -22,14 +19,7 @@ function App() {
 
   const listenerCount = useListeningCounter(counterConfig)
 
-  const handleStart = () => {
-    player.play()
-    setHasStarted(true)
-  }
-
   useEffect(() => {
-    if (!hasStarted) return
-
     function onKeyDown(event) {
       if (event.target instanceof HTMLInputElement) return
 
@@ -45,7 +35,7 @@ function App() {
 
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [hasStarted, player])
+  }, [player])
 
   return (
     <div className="scene">
@@ -75,14 +65,6 @@ function App() {
 
         <Footer credit={footer.credit} supportUrl={footer.supportUrl} />
       </div>
-
-      {!hasStarted && (
-        <StartOverlay
-          label={playerConfig.tapToStartLabel}
-          isReady={player.isReady}
-          onStart={handleStart}
-        />
-      )}
     </div>
   )
 }
