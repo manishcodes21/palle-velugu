@@ -14,14 +14,14 @@ function PlayerCard({
 }) {
   const { current, duration } = progress
   const pct = duration > 0 ? (current / duration) * 100 : 0
-  const title = cleanTrackTitle(track.title) || 'Loading the next old song…'
+  const title = cleanTrackTitle(track.title) || ''
 
   return (
     <div className="player-card">
       <div className="player-card__now-playing">
         <span className="player-card__eyebrow">now playing</span>
         <p className="player-card__title" title={title}>
-          {isBuffering ? 'Buffering…' : title}
+          {isBuffering ? '' : title}
         </p>
       </div>
 
