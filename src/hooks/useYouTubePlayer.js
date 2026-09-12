@@ -70,6 +70,18 @@ export function useYouTubePlayer({ containerId, playlistId, fallbackVideoIds }) 
         events: {
           onReady: () => {
             if (cancelled) return
+            // Enable shuffle for random playback order
+            try {
+              playerRef.current?.setShuffle?.(true)
+              // Jump to random starting position in playlist
+              const playlist = playerRef.current?.getPlaylist?.()
+              if (playlist && playlist.length > 0) {
+                const randomIndex = Math.floor(Math.random() * playlist.length)
+                playerRef.current?.playVideoAt?.(randomIndex)
+              }
+            } catch (e) {
+              // fallback: just continue normally
+            }
             setIsReady(true)
           },
           onStateChange: (event) => {

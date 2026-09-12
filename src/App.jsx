@@ -19,6 +19,15 @@ function App() {
 
   const listenerCount = useListeningCounter(counterConfig)
 
+  // Auto-start after 1ms timer (workaround for browser autoplay policies)
+  useEffect(() => {
+    if (!player.isReady) return
+    const timer = setTimeout(() => {
+      player.play()
+    }, 1)
+    return () => clearTimeout(timer)
+  }, [player.isReady, player.play])
+
   useEffect(() => {
     function onKeyDown(event) {
       if (event.target instanceof HTMLInputElement) return
