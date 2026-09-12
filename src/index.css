@@ -1,0 +1,52 @@
+:root {
+  color-scheme: dark;
+  --ink: #fdf6ec;
+  --ink-dim: rgba(253, 246, 236, 0.72);
+  --ink-faint: rgba(253, 246, 236, 0.5);
+  --accent: #ffb677;
+  --glass-bg: rgba(24, 16, 28, 0.42);
+  --glass-bg-strong: rgba(18, 12, 22, 0.62);
+  --glass-border: rgba(255, 230, 200, 0.16);
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --font-display: 'Noto Sans Telugu', 'Cormorant Garamond', serif;
+  --font-serif: 'Cormorant Garamond', 'Noto Sans Telugu', serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0710;
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}

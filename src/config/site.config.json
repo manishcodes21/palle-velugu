@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "siteTitle": "ఆర్టీసీ బస్సు · RTC Bus",
+    "description": "Old 90s Telugu songs for the sleepy dawn RTC bus journey home."
+  },
+  "hero": {
+    "titleTelugu": "ఆర్టీసీ బస్సు",
+    "titleTransliteration": "RTC Bus",
+    "kicker": "DAWN · THE 5 AM BUS",
+    "copy": "Nobody's fully awake yet. The driver knows the road by heart. Somewhere past the windshield the sky is turning orange, and SPB is still singing.",
+    "imageUrl": "/hero-dawn-bus.svg",
+    "imageAlt": "View down the aisle of a dawn RTC bus, dawn sky breaking through the windshield"
+  },
+  "player": {
+    "youtube": {
+      "_comment": "fallbackVideoIds is an optional backup list of individual video IDs if the playlist becomes unavailable.",
+      "playlistId": "PLB2VKvIUTa6xD-HvyWw0dyo3N0FlnDFX1",
+      "fallbackVideoIds": []
+    },
+    "tapToStartLabel": "Tap to start the journey",
+    "watchOnYoutubeLabel": "Watch on YouTube"
+  },
+  "counter": {
+    "enabled": true,
+    "baseCount": 214,
+    "minCount": 60,
+    "maxCount": 480,
+    "driftIntervalMs": 4000,
+    "maxStep": 3,
+    "label": "on the bus right now"
+  },
+  "footer": {
+    "credit": "made with ❤️ by Manish",
+    "supportUrl": null
+  }
+}
