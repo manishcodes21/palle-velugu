@@ -1,14 +1,14 @@
 {
   "meta": {
-    "siteTitle": "ఆర్టీసీ బస్సు · RTC Bus",
-    "description": "Old 90s Telugu songs for the sleepy dawn RTC bus journey home."
+    "siteTitle": "పల్లె వెలుగు బస్సు · Palle Velugu Bus",
+    "description": "పాత తెలుగు పాటలు, వేకువజామున ఊరికెళ్ళే ఆర్టీసీ బస్సు గుర్తులు."
   },
   "hero": {
-    "titleTelugu": "ఆర్టీసీ బస్సు",
-    "titleTransliteration": "RTC Bus",
+    "titleTelugu": "పల్లె వెలుగు బస్సు",
+    "titleTransliteration": "Palle Velugu Bus",
     "kicker": "DAWN · THE 5 AM BUS",
     "copy": "Nobody's fully awake yet. The driver knows the road by heart. Somewhere past the windshield the sky is turning orange, and SPB is still singing.",
-    "imageUrl": "/hero-dawn-bus-apsrtc.png",
+    "imageUrl": "/hero-dawn-bus-tgsrtc.png",
     "imageAlt": "View down the aisle of a dawn RTC bus, dawn sky breaking through the windshield"
   },
   "player": {
@@ -30,7 +30,18 @@
     "label": "on the bus right now"
   },
   "footer": {
-    "credit": "made with ❤️ by Manish",
-    "supportUrl": null
+    "credit": "Vibe coded by Manish and Nishanth"
+  },
+  "support": {
+    "enabled": true,
+    "linkLabel": "Support this",
+    "heading": "Support the Platform to Stay Free FOREVER",
+    "body": "Web server costs add up to keep this running smooth for everyone — please send any amount you wish. Thank you in advance ❤️",
+    "qrImageUrl": "/support-qr.jpeg",
+    "qrImageAlt": "UPI QR code to support Palle Velugu Bus",
+    "downloadLabel": "Download QR Code",
+    "downloadFileName": "palle-velugu-support-qr.jpeg",
+    "footnote": "Save it and scan with any UPI app.",
+    "dismissLabel": "Dismiss"
   }
 }

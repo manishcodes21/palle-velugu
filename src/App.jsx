@@ -1,16 +1,20 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Hero, { Atmosphere } from './components/Hero'
 import PlayerCard from './components/PlayerCard'
 import ListeningCounter from './components/ListeningCounter'
+import TimeBadge from './components/TimeBadge'
 import Footer from './components/Footer'
+import SupportModal from './components/SupportModal'
 import { useYouTubePlayer } from './hooks/useYouTubePlayer'
 import { useListeningCounter } from './hooks/useListeningCounter'
 import siteConfig from './config/site.config.json'
 import './App.css'
 
-const { hero, player: playerConfig, counter: counterConfig, footer } = siteConfig
+const { hero, player: playerConfig, counter: counterConfig, footer, support: supportConfig } = siteConfig
 
 function App() {
+  const [isSupportOpen, setIsSupportOpen] = useState(false)
+
   const player = useYouTubePlayer({
     containerId: 'yt-player',
     playlistId: playerConfig.youtube.playlistId,
@@ -53,6 +57,8 @@ function App() {
       <div id="yt-player" className="yt-player-mount" />
 
       <div className="scene__content">
+        <TimeBadge />
+
         {counterConfig.enabled && (
           <ListeningCounter count={listenerCount} label={counterConfig.label} />
         )}
@@ -72,8 +78,16 @@ function App() {
           watchLabel={playerConfig.watchOnYoutubeLabel}
         />
 
-        <Footer credit={footer.credit} supportUrl={footer.supportUrl} />
+        <Footer
+          credit={footer.credit}
+          supportLabel={supportConfig.enabled ? supportConfig.linkLabel : null}
+          onSupportClick={() => setIsSupportOpen(true)}
+        />
       </div>
+
+      {isSupportOpen && (
+        <SupportModal config={supportConfig} onClose={() => setIsSupportOpen(false)} />
+      )}
     </div>
   )
 }
